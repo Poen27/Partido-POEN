@@ -1,0 +1,235 @@
+from pathlib import Path
+
+html = """<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POEN - Partido da Ordem Evolutiva Nacional</title>
+<style>
+:root{
+--verde:#0F4F16;
+--azul:#00307D;
+--dourado:#D9A315;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+html{scroll-behavior:smooth;}
+
+body{
+background:#f4f6f8;
+color:#222;
+}
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:#00307D;
+border-bottom:4px solid #D9A315;
+padding:15px;
+text-align:center;
+z-index:1000;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#D9A315;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(135deg,#0F4F16,#00307D);
+color:white;
+padding:20px;
+}
+
+.hero h1{
+font-size:5rem;
+color:#D9A315;
+text-shadow:0 0 20px rgba(217,163,21,.4);
+}
+
+.hero p{
+font-size:1.2rem;
+margin:15px 0;
+}
+
+.btn{
+display:inline-block;
+background:#D9A315;
+color:#00307D;
+font-weight:bold;
+padding:15px 30px;
+border-radius:40px;
+text-decoration:none;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:40px 20px;
+}
+
+section{
+background:white;
+margin:25px 0;
+padding:30px;
+border-radius:15px;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+h2{
+color:#00307D;
+border-left:8px solid #D9A315;
+padding-left:12px;
+margin-bottom:20px;
+}
+
+h2::after{
+content:'';
+display:block;
+width:100px;
+height:4px;
+background:#D9A315;
+margin-top:8px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-top:8px solid #D9A315;
+border-radius:12px;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+border-top:8px solid #00307D;
+}
+
+input,textarea{
+width:100%;
+padding:12px;
+margin:8px 0;
+border:1px solid #ccc;
+border-radius:8px;
+}
+
+button{
+background:#0F4F16;
+color:white;
+padding:14px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+footer{
+background:#00307D;
+border-top:5px solid #D9A315;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+@media(max-width:768px){
+.hero h1{font-size:3rem;}
+nav a{display:block;margin:8px 0;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<a href="#quem">Quem Somos</a>
+<a href="#manifesto">Manifesto</a>
+<a href="#propostas">Propostas</a>
+<a href="#filiacao">Filiação</a>
+<a href="#contato">Contato</a>
+</nav>
+
+<header class="hero">
+<div>
+<h1>POEN</h1>
+<p>Partido da Ordem Evolutiva Nacional</p>
+<p><strong>Ordem • Desenvolvimento • Responsabilidade</strong></p>
+<a href="#propostas" class="btn">Conheça as Propostas</a>
+</div>
+</header>
+
+<div class="container">
+
+<section id="quem">
+<h2>Quem Somos</h2>
+<p>O POEN busca promover desenvolvimento, responsabilidade pública, educação de qualidade, segurança e modernização do Estado.</p>
+</section>
+
+<section id="manifesto">
+<h2>Manifesto</h2>
+<p>Defendemos instituições fortes, transparência, crescimento econômico sustentável e oportunidades para todos os cidadãos.</p>
+</section>
+
+<section id="propostas">
+<h2>Principais Propostas</h2>
+<div class="cards">
+<div class="card"><h3>🛡 Segurança</h3><p>Fortalecimento da segurança pública.</p></div>
+<div class="card"><h3>📚 Educação</h3><p>Investimento em ensino técnico e qualificação.</p></div>
+<div class="card"><h3>💼 Economia</h3><p>Incentivo ao empreendedorismo.</p></div>
+<div class="card"><h3>🏥 Saúde</h3><p>Melhoria da gestão da saúde.</p></div>
+</div>
+</section>
+
+<section id="filiacao">
+<h2>Filiação</h2>
+<form>
+<input type="text" placeholder="Nome Completo">
+<input type="email" placeholder="E-mail">
+<input type="tel" placeholder="Telefone">
+<textarea placeholder="Mensagem"></textarea>
+<button type="submit">Solicitar Filiação</button>
+</form>
+</section>
+
+<section id="contato">
+<h2>Contato</h2>
+<p>Email: contato@poen.org</p>
+<p>Instagram: @poenoficial</p>
+</section>
+
+</div>
+
+<footer>
+© 2026 POEN - Partido da Ordem Evolutiva Nacional
+</footer>
+
+</body>
+</html>
+"""
+
+path = "/mnt/data/POEN_site_amarelo.html"
+Path(path).write_text(html, encoding="utf-8")
+print(path)
